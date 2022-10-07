@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 15vh;
+}
+
+.back {
+    margin: 0 auto;
+    height: 500px;
+    width: 500px;
+    background-color: #c2d4b1;
+    border-radius: 20px;
+}
+
+.back input {
+    margin: 20px 0 20px 20px;
+    width: 340px;
+    height: 50px;
+    font-size: 30px;
+}
+
+button {
+    width: 90px;
+    height: 60px;
+    cursor: pointer;
+    margin: 0 10px 40px 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #a6b992;
+}
+
+.back button.clear {
+    color: #fff;
+    background-color: red;
+    border-radius: 10px;
+    margin-left: 16px;
+    width: 80px;
+    height: 40px;
+    margin-right: 40px;
+}
