@@ -9,27 +9,33 @@
 </head>
 <body>
     
-    <h1>Calculator app</h1>
+    <!-- <h1>Calculator app</h1> -->
 
-    <div class="back">
-        <input type="text" readonly="readonly">
-        <button class="clear">C</button>
-        <button class="one numbers">1</button>
-        <button class="two numbers">2</button>
-        <button class="three numbers">3</button>
-        <button class="divide operators">÷</button>
-        <button class="four numbers">4</button>
-        <button class="five numbers">5</button>
-        <button class="six numbers">6</button>
-        <button class="multiply operators">×</button>
-        <button class="seven numbers">7</button>
-        <button class="eigth numbers">8</button>
-        <button class="nine numbers">9</button>
-        <button class="plus operators">+</button>
-        <button class="zero numbers">0</button>
-        <button class="point numbers">.</button>
-        <button class="equals">=</button>
-        <button class="minus operators">-</button>
+    <div class="calculator-grid">
+        <div class="output">
+            <div class="previous-operand"></div>
+            <div class="current-operand"></div>
+        </div>
+        
+        <button class="double-size clear">AC</button>
+        <button class="delete">DEL</button>
+        <button class="operators">÷</button>
+        <button class="numbers">1</button>
+        <button class="numbers">2</button>
+        <button class="numbers">3</button>
+        <button class="operators">*</button>
+        <button class="numbers">4</button>
+        <button class="numbers">5</button>
+        <button class="numbers">6</button>
+        <button class="operators">+</button>
+        <button class="numbers">7</button>
+        <button class="numbers">8</button>
+        <button class="numbers">9</button>
+        <button class="operators">-</button>
+        <button class="point">.</button>
+        <button class="numbers">0</button>
+        <button class="double-size equals">=</button>
+
     </div>
 
     <script src="script.js"></script>
