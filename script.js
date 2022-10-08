@@ -77,8 +77,14 @@ operatorButtons.forEach(button => {
                     currentOperandText.innerHTML = ''
                     break
                 case '÷':
-                    previousOperandText.innerHTML = (+previousValue.join('') / curVal).toFixed(2) + '÷'
+                    if(+previousValue.join('') / curVal < 0.01) {
+                        previousOperandText.innerHTML = (+previousValue.join('') / curVal) + '÷'
                     currentOperandText.innerHTML = ''
+                    } else {
+                        previousOperandText.innerHTML = (+previousValue.join('') / curVal).toFixed(2) + '÷'
+                        currentOperandText.innerHTML = ''
+                    }
+                    
                     break
                     
             }
@@ -106,8 +112,13 @@ equalsButton.addEventListener('click', () => {
             previousOperandText.innerHTML = ''
             break
         case '÷':
-            currentOperandText.innerHTML = (+previousValue.join('') / curVal).toFixed(2)
-            previousOperandText.innerHTML = ''
+            if(+previousValue.join('') / curVal < 0.01) {
+                previousOperandText.innerHTML = (+previousValue.join('') / curVal) + '÷'
+            currentOperandText.innerHTML = ''
+            } else {
+                previousOperandText.innerHTML = (+previousValue.join('') / curVal).toFixed(2) + '÷'
+                currentOperandText.innerHTML = ''
+            }
             break
             
     }
