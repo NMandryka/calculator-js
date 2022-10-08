@@ -49,7 +49,7 @@ operatorButtons.forEach(button => {
             const lastValue = currentOperandText.innerHTML.split('')
             if(lastValue.length != 0 &&
             lastValue[lastValue.length - 1] != '÷' &&
-            lastValue[lastValue.length - 1] != '*'&&
+            lastValue[lastValue.length - 1] != '*' &&
             lastValue[lastValue.length - 1] != '-' &&
             lastValue[lastValue.length - 1] != '+')  {
     
@@ -63,31 +63,36 @@ operatorButtons.forEach(button => {
             previousValue.pop()
             const curVal = Number(currentOperandText.innerHTML)
             
-            switch(operator) {
-                case '+':
-                    previousOperandText.innerHTML =  curVal + Number(previousValue.join('')) + button.innerHTML
-                    currentOperandText.innerHTML = ''
-                    break
-                case '-':
-                    previousOperandText.innerHTML = +previousValue.join('') - curVal + button.innerHTML
-                    currentOperandText.innerHTML = ''
-                    break
-                case "*":
-                    previousOperandText.innerHTML *= +previousValue.join('') + button.innerHTML
-                    currentOperandText.innerHTML = ''
-                    break
-                case '÷':
-                    if(+previousValue.join('') / curVal < 0.01) {
-                        previousOperandText.innerHTML = (+previousValue.join('') / curVal) + '÷'
-                    currentOperandText.innerHTML = ''
-                    } else {
-                        previousOperandText.innerHTML = (+previousValue.join('') / curVal).toFixed(2) + '÷'
+            if(currentOperandText.innerHTML !== '') {
+                switch(operator) {
+                    case '+':
+                        previousOperandText.innerHTML =  curVal + Number(previousValue.join('')) + button.innerHTML
                         currentOperandText.innerHTML = ''
-                    }
-                    
-                    break
-                    
+                        break
+                    case '-':
+                        previousOperandText.innerHTML = +previousValue.join('') - curVal + button.innerHTML
+                        currentOperandText.innerHTML = ''
+                        break
+                    case "*":
+                        previousOperandText.innerHTML *= +previousValue.join('') + '*'
+                        currentOperandText.innerHTML = ''
+                        break
+                    case '÷':
+                        if(+previousValue.join('') / curVal < 0.01) {
+                            previousOperandText.innerHTML = (+previousValue.join('') / curVal) + '÷'
+                        currentOperandText.innerHTML = ''
+                        } else {
+                            previousOperandText.innerHTML = (+previousValue.join('') / curVal).toFixed(2) + '÷'
+                            currentOperandText.innerHTML = ''
+                        } 
+                        break
+                }
+            } else {
+                const previousValue = previousOperandText.innerHTML.split('')
+                previousValue.pop()
+                previousOperandText.innerHTML =  previousValue.join('') + button.innerHTML
             }
+            
         }
     })
 })
